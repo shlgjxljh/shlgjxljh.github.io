@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tensorflow-API-总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/undefined.html">tensorflow API 总结2</a>
+    </h1>
+  
+
+        
+        <a href="/post/undefined.html" class="archive-article-date">
+  	<time datetime="2020-12-16T06:39:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tensorflow-API-总结2"><a href="#tensorflow-API-总结2" class="headerlink" title="tensorflow API 总结2"></a>tensorflow API 总结2</h1><p>(1) tf.cast(a,tg.float32) 将a的数据精度转换为 float32。</p>
+<p>(2) a =tf.Variable(a) 在普通张量a的基础上加上Variable 属性 默认为True 可以通过a.trainable=False 因为在神经网络中需要跟踪优化的变量很多，他们会占用很大的空间，所以不需要优化的张量余姚使其Variable属性变为False。</p>
+<p>(3)tf.keras.losses.mse(y , out) 在回归问题中常用mse（均方差函数）来判断模型的准确率。</p>
+<p>(4)tf,keras,layers.Dense(x,activation=’relu’) 创建网络层 x为输出节点数 activation 为激活函数常用线性整流函数。</p>
+<p>(5)fc.build(input_shape=(x,y)) 通过build 函数创建w，b张量 ，通过fc.bias fc.kernel 来查看偏差和权值矩阵。</p>
+<p>(6)<strong>索引</strong> x=tf.random.normal(4,32,32,3) 用x[ i , j , k…]形式去索引。</p>
+<p>(7)<strong>切片</strong>  x[ ]格式总结 [start : end : step]    起始 结束 步长，  [ : ]读取所有元素, [start: ] 读取从开始到后面所有元素</p>
+<p>(8)<strong>张量切片</strong> x[a,…,b] a维度对齐最左边，b维度对齐最右边，中间的维度全部读取。</p>
+<p>(9)<strong>维度变换之改变视图</strong>  x=tf.reshape( )数据存储不改变，改变的是数据的结构，当然数据结构必须是合法的。</p>
+<p>(10)<strong>维度变换之增删维度</strong> tf.expend_dims (x,axis)在axis维度后面添加一个数量为1的新维度，dims是维度单词dimensions的缩写； tf.squeeze(x,axis)删除axis处数量为1 的维度，如过不指定axis 则删除所有数量为1的维度。</p>
+<p>(11)<strong>维度变换之交换维度</strong> tf.transpose(x,perm=[0,3,1,2]) 原维度按0312重新排列。</p>
+<p>(12) tf.tile(x,multiples=[a,b]) 将张量x 第一维度复制a份 第二维度复制b份。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/undefined.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-tensorflow 框架下API小总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
