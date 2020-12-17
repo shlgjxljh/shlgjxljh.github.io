@@ -152,6 +152,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tensorflow-API-总结3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/undefined.html">tensorflow API 总结3</a>
+    </h1>
+  
+
+        
+        <a href="/post/undefined.html" class="archive-article-date">
+  	<time datetime="2020-12-17T12:58:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tensorflow-API-总结-3"><a href="#tensorflow-API-总结-3" class="headerlink" title="tensorflow API 总结 3"></a>tensorflow API 总结 3</h1><p>(1) tf.broadcast_to(b,[x,y])将张量b 扩展为shape 为[x,y]的张量。该函数是可以自动调用的，但是使用的过程必须合法，首先让张量b 的shape 按右对齐对于长度为1 的维度默认其普适。</p>
+<p>(2)<strong>tensorflow 中的加减乘除</strong> a//b 整除运算  a%b 余除运算 x**y 乘方运算 tf.square( )平方运算 tf.sqrt( )平方根运算</p>
+<p>a**x 指数运算  tf.exp( x. ) 自然指数运算 tf.math.log(x)自然对数运算 tf.math.log( )/tf.math.log( )</p>
+<p>(3)tf.matmul(a,b) 矩阵相乘或者 a@b 当ab维度大于2时 a的倒数第一个维度和b的倒数第二个维度 必须相等</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/undefined.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-tensorflow-API-总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -246,8 +312,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="tensorflow-框架下API小总结-1"><a href="#tensorflow-框架下API小总结-1" class="headerlink" title="tensorflow 框架下API小总结(1)"></a>tensorflow 框架下API小总结(1)</h1><h2 id="回归问题使用到的API"><a href="#回归问题使用到的API" class="headerlink" title="回归问题使用到的API"></a>回归问题使用到的API</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(1)tf.random.normal( shape,mean&#x3D;,stddev&#x3D; )随机生成一个正态分布</span><br><span class="line"></span><br><span class="line">(2)tf.random.uniform( minval&#x3D;0,maxval&#x3D; )随机生成一个均匀分布左开右闭区间</span><br><span class="line"></span><br><span class="line">(3)tf.ones( shape )生成一个全一张量，常用于初始化</span><br><span class="line"></span><br><span class="line">(4)tf.zeros( shape )生成一个全零张量，常用于初始化</span><br><span class="line"></span><br><span class="line">(5)tf.convert_to_tensor( list ) tf.convert_to_tensor( [ [  ],[  ] ]) 将列表或Numpy Array数组转变为张量</span><br><span class="line"></span><br><span class="line">(6)tf.fill( shape, constant) 创建一个填充满常数constant的张量</span><br><span class="line"></span><br><span class="line">(7)tf.range( limit,delta&#x3D;) 创建一个[0,limit]的序列，步长为delta</span><br><span class="line"></span><br><span class="line">(8)fc&#x3D;tf.layers.Dense( a )创建一层Wx+b，输出节点为a</span><br><span class="line"></span><br><span class="line">(9)fc.built(input_shape&#x3D;(2,4) )build函数创建W，b张量，输入节点为4</span><br><span class="line"></span><br><span class="line">(10)fc.bias 查看偏置向量 fc.kernel 查看权值矩阵</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/liujiahao/blog/source/_posts/waitan.jpeg" alt="外滩"></p>
+        <h1 id="tensorflow-框架下API小总结-1"><a href="#tensorflow-框架下API小总结-1" class="headerlink" title="tensorflow 框架下API小总结(1)"></a>tensorflow 框架下API小总结(1)</h1><h2 id="回归问题使用到的API"><a href="#回归问题使用到的API" class="headerlink" title="回归问题使用到的API"></a>回归问题使用到的API</h2><p>(1)tf.random.normal( shape,mean=,stddev= )随机生成一个正态分布</p>
+<p>(2)tf.random.uniform( minval=0,maxval= )随机生成一个均匀分布左开右闭区间</p>
+<p>(3)tf.ones( shape )生成一个全一张量，常用于初始化</p>
+<p>(4)tf.zeros( shape )生成一个全零张量，常用于初始化</p>
+<p>(5)tf.convert_to_tensor( list ) tf.convert_to_tensor( [ [  ],[  ] ]) 将列表或Numpy Array数组转变为张量</p>
+<p>(6)tf.fill( shape, constant) 创建一个填充满常数constant的张量</p>
+<p>(7)tf.range( limit,delta=) 创建一个[0,limit]的序列，步长为delta</p>
+<p>(8)fc=tf.layers.Dense( a )创建一层Wx+b，输出节点为a</p>
+<p>(9)fc.built(input_shape=(2,4) )build函数创建W，b张量，输入节点为4</p>
+<p>(10)fc.bias 查看偏置向量 fc.kernel 查看权值矩阵<br><img src="/Users/liujiahao/blog/source/_posts/waitan.jpeg" alt="外滩"></p>
 
       
 

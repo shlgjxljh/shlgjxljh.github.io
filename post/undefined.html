@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://shlgjxljh.github.io">
   <title>tensorflow API 总结(1) | 黑白乌鹭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="tensorflow 框架下API小总结(1)回归问题使用到的API12345678910111213141516171819(1)tf.random.normal( shape,mean&#x3D;,stddev&#x3D; )随机生成一个正态分布(2)tf.random.uniform( minval&#x3D;0,maxval&#x3D; )随机生成一个均匀分布左开右闭区间(3)tf.one">
+  <meta name="description" content="tensorflow 框架下API小总结(1)回归问题使用到的API(1)tf.random.normal( shape,mean&#x3D;,stddev&#x3D; )随机生成一个正态分布 (2)tf.random.uniform( minval&#x3D;0,maxval&#x3D; )随机生成一个均匀分布左开右闭区间 (3)tf.ones( shape )生成一个全一张量，常用于初始化 (4)tf.zeros( shape )生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tensorflow API 总结(1)">
 <meta property="og:url" content="http://shlgjxljh.github.io/post/undefined.html">
 <meta property="og:site_name" content="黑白乌鹭">
-<meta property="og:description" content="tensorflow 框架下API小总结(1)回归问题使用到的API12345678910111213141516171819(1)tf.random.normal( shape,mean&#x3D;,stddev&#x3D; )随机生成一个正态分布(2)tf.random.uniform( minval&#x3D;0,maxval&#x3D; )随机生成一个均匀分布左开右闭区间(3)tf.one">
+<meta property="og:description" content="tensorflow 框架下API小总结(1)回归问题使用到的API(1)tf.random.normal( shape,mean&#x3D;,stddev&#x3D; )随机生成一个正态分布 (2)tf.random.uniform( minval&#x3D;0,maxval&#x3D; )随机生成一个均匀分布左开右闭区间 (3)tf.ones( shape )生成一个全一张量，常用于初始化 (4)tf.zeros( shape )生">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://shlgjxljh.github.io/Users/liujiahao/blog/source/_posts/waitan.jpeg">
 <meta property="article:published_time" content="2020-12-08T09:18:02.312Z">
-<meta property="article:modified_time" content="2020-12-11T14:48:29.744Z">
+<meta property="article:modified_time" content="2020-12-17T13:02:23.657Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://shlgjxljh.github.io/Users/liujiahao/blog/source/_posts/waitan.jpeg">
@@ -176,8 +176,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="tensorflow-框架下API小总结-1"><a href="#tensorflow-框架下API小总结-1" class="headerlink" title="tensorflow 框架下API小总结(1)"></a>tensorflow 框架下API小总结(1)</h1><h2 id="回归问题使用到的API"><a href="#回归问题使用到的API" class="headerlink" title="回归问题使用到的API"></a>回归问题使用到的API</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(1)tf.random.normal( shape,mean&#x3D;,stddev&#x3D; )随机生成一个正态分布</span><br><span class="line"></span><br><span class="line">(2)tf.random.uniform( minval&#x3D;0,maxval&#x3D; )随机生成一个均匀分布左开右闭区间</span><br><span class="line"></span><br><span class="line">(3)tf.ones( shape )生成一个全一张量，常用于初始化</span><br><span class="line"></span><br><span class="line">(4)tf.zeros( shape )生成一个全零张量，常用于初始化</span><br><span class="line"></span><br><span class="line">(5)tf.convert_to_tensor( list ) tf.convert_to_tensor( [ [  ],[  ] ]) 将列表或Numpy Array数组转变为张量</span><br><span class="line"></span><br><span class="line">(6)tf.fill( shape, constant) 创建一个填充满常数constant的张量</span><br><span class="line"></span><br><span class="line">(7)tf.range( limit,delta&#x3D;) 创建一个[0,limit]的序列，步长为delta</span><br><span class="line"></span><br><span class="line">(8)fc&#x3D;tf.layers.Dense( a )创建一层Wx+b，输出节点为a</span><br><span class="line"></span><br><span class="line">(9)fc.built(input_shape&#x3D;(2,4) )build函数创建W，b张量，输入节点为4</span><br><span class="line"></span><br><span class="line">(10)fc.bias 查看偏置向量 fc.kernel 查看权值矩阵</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/liujiahao/blog/source/_posts/waitan.jpeg" alt="外滩"></p>
+        <h1 id="tensorflow-框架下API小总结-1"><a href="#tensorflow-框架下API小总结-1" class="headerlink" title="tensorflow 框架下API小总结(1)"></a>tensorflow 框架下API小总结(1)</h1><h2 id="回归问题使用到的API"><a href="#回归问题使用到的API" class="headerlink" title="回归问题使用到的API"></a>回归问题使用到的API</h2><p>(1)tf.random.normal( shape,mean=,stddev= )随机生成一个正态分布</p>
+<p>(2)tf.random.uniform( minval=0,maxval= )随机生成一个均匀分布左开右闭区间</p>
+<p>(3)tf.ones( shape )生成一个全一张量，常用于初始化</p>
+<p>(4)tf.zeros( shape )生成一个全零张量，常用于初始化</p>
+<p>(5)tf.convert_to_tensor( list ) tf.convert_to_tensor( [ [  ],[  ] ]) 将列表或Numpy Array数组转变为张量</p>
+<p>(6)tf.fill( shape, constant) 创建一个填充满常数constant的张量</p>
+<p>(7)tf.range( limit,delta=) 创建一个[0,limit]的序列，步长为delta</p>
+<p>(8)fc=tf.layers.Dense( a )创建一层Wx+b，输出节点为a</p>
+<p>(9)fc.built(input_shape=(2,4) )build函数创建W，b张量，输入节点为4</p>
+<p>(10)fc.bias 查看偏置向量 fc.kernel 查看权值矩阵<br><img src="/Users/liujiahao/blog/source/_posts/waitan.jpeg" alt="外滩"></p>
 
       
 
