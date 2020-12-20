@@ -176,6 +176,14 @@
 <p>(2)<strong>tensorflow 中的加减乘除</strong> a//b 整除运算  a%b 余除运算 x**y 乘方运算 tf.square( )平方运算 tf.sqrt( )平方根运算</p>
 <p>a**x 指数运算  tf.exp( x. ) 自然指数运算 tf.math.log(x)自然对数运算 tf.math.log( )/tf.math.log( )</p>
 <p>(3)tf.matmul(a,b) 矩阵相乘或者 a@b 当ab维度大于2时 a的倒数第一个维度和b的倒数第二个维度 必须相等</p>
+<p>(4) <strong>tensorflow 合并</strong> tf.concat([a,b],axis=) 两个张量在某一维度上合并，非合并维度必须一致，否则不合法。合并后维度总数不变。</p>
+<p>(5)<strong>tensorflow 堆叠</strong>  tf.stack(tensors,axis=)  在某一维度堆叠，两个张量维度必须完全相同，并在此处生成新维度。</p>
+<p>(6)<strong>tensorflow 分割</strong> tf.split(x, num_or_size_splits,axis=) x为待分割张量，num_or_size_splits 切割方案：当其为单个数值时，表示张量等长切割多少份；当其为一个列表，列表内的每个元素表示每份的长度，最后返回存储这这几个张量的列表。</p>
+<p>(7)tf.unstack(tensor,axis= ) stack 函数的逆函数 在某一维度上分解成长度为一的张量（stack增加一个维度，unstack 减少一个维度）</p>
+<p>(8) tf.norm(x,ord=) 求解张量的范数；(ord=1 1范数，ord=2 二范数，ord=inf 无穷范数)</p>
+<p>(9**)tensorflow 最值 均值 求和** tf.reduce_max(x,axis=)统计维度上的最大值  ；tf.reduce_min(x,axis=)统计维度上的最小值  </p>
+<p>tf.reduce_mean(x,axis=)统计维度上的平均值  ；tf.reduce_sum(x,axis=)计算维度上元素的和。</p>
+<p>(10) tf.nn.softmax(out,axis=) 将各个类别的数值根据公式转变为概率。搭配tf.argmax(out,axis=) tf.argmin(out, axis)找到最大概率所在的索引号。</p>
 
       
 
